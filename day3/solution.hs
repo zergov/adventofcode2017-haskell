@@ -40,7 +40,7 @@ neighbors (x, y) =
   , (x + 1, y - 1)
   ]
 
--- sumspiral :: [Int]
+sumspiral :: [Int]
 sumspiral = f M.empty spiral
   where
     f sums ((0,0):ps) = 1 : f (M.insert (0, 0) 1 sums) ps
@@ -51,6 +51,7 @@ sumspiral = f M.empty spiral
 part1 :: Int -> Int
 part1 n = vdist (0, 0) $ spiral !! (n-1)
 
+part2 :: Int -> Int
 part2 n = head . dropWhile (< n) $ sumspiral
 
 main = do
