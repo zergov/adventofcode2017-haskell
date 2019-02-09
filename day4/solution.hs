@@ -9,7 +9,6 @@ isValid2 :: String -> Bool
 isValid2 passphrase = (nub ws) == ws
   where ws = map sort . words $ passphrase
 
-
 part1 :: [String] -> Int
 part1 = length . filter isValid
 
